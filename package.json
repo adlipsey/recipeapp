@@ -1,0 +1,25 @@
+{
+  "name": "recipeapp",
+  "version": "1.0.0",
+  "description": "A digital recipe collection accessable from web or app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adlipsey/recipeapp.git"
+  },
+  "keywords": [
+    "Recipes",
+    "Cookbook"
+  ],
+  "author": "Sophia S., Joseph S., Mel M., Haley L., Andrew L.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adlipsey/recipeapp/issues"
+  },
+  "homepage": "https://github.com/adlipsey/recipeapp#readme",
+  "dependencies": {}
+}
