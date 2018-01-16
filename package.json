@@ -21,5 +21,7 @@
     "url": "https://github.com/adlipsey/recipeapp/issues"
   },
   "homepage": "https://github.com/adlipsey/recipeapp#readme",
-  "dependencies": {}
+  "dependencies": {
+    "react-native-autogrow-textinput": "^5.0.0"
+  }
 }
