@@ -17,14 +17,14 @@ export const recipeUpdate = ({ prop, value }) => {
 };
 
 //Adds a new recipe entry to the database
-export const recipeCreate = ({ name, phone, shift }) => {
+export const recipeCreate = ({ name, ingredients, steps, servings, prep, cook, notes, cals, carbs, protein, fat, vegetarian, vegan, glutenfree, dairyfree }) => {
 	//Grabs current user from firebase
 	const { currentUser } = firebase.auth();
 	return (dispatch) => {
 		//Targets user's recipes section
 		firebase.database().ref(`/users/${currentUser.uid}/recipes`)
 			//Pushes new recipe
-			.push({ name, phone, shift })
+			.push({ name, ingredients, steps, servings, prep, cook, notes, cals, carbs, protein, fat, vegetarian, vegan, glutenfree, dairyfree })
 			.then(() => { 
 				//Sends RECIPE_CREATE to reducers, clears form inputs
 				dispatch({ type: RECIPE_CREATE });

@@ -24,7 +24,7 @@ class RecipeList extends Component {
 	}
 
 	renderRow(recipe) {
-		return <ListItem employee={recipe} />;
+		return <ListItem recipe={recipe} />;
 	}
 
 	render() {

@@ -55,8 +55,39 @@ const styles = {
 };
 
 const mapStateToProps = (state) => {
-	const { name, phone, shift } = state.recipeForm;
-	return { name, phone, shift };
+  const { 
+      name, 
+      ingredients, 
+      steps, 
+      servings, 
+      prep, 
+      cook, 
+      notes, 
+      cals, 
+      carbs, 
+      protein, 
+      fat, 
+      vegetarian, 
+      vegan, 
+      glutenfree, 
+      dairyfree 
+    } = state.recipeForm;
+
+  return { name, 
+      ingredients, 
+      steps, 
+      servings, 
+      prep, 
+      cook, 
+      notes, 
+      cals, 
+      carbs, 
+      protein, 
+      fat, 
+      vegetarian, 
+      vegan, 
+      glutenfree, 
+      dairyfree };
 };
 
 export default connect(mapStateToProps, { recipeUpdate })(RecipeForm);

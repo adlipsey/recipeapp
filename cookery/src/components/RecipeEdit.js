@@ -1,3 +1,5 @@
+
+//Import dependencies
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
@@ -6,18 +8,28 @@ import RecipeForm from './RecipeForm';
 import { recipeUpdate, recipeSave, recipeDelete } from '../actions';
 import { Card, CardSection, Button, ConfirmModal } from './common';
 
+//Create RecipeEdit component
 class RecipeEdit extends Component {
+
+	//Set initial component-level state
 	state= { showModal: false };
 
+	//Before component mounts:
 	componentWillMount() {
-		_.each(this.props.employee, (value, prop) => {
+		//Converts recipe object to an array and for each prop
+		_.each(this.props.recipe, (value, prop) => {
+			//Calls action which sets prop-value pair in state
+			//This effectively pre-populates the form with recipe data
 			this.props.recipeUpdate({ prop, value });
 		});
 	}
 
+	//When save button pressed:
 	onButtonPress() {
-		const { name, phone, shift } = this.props;
-		this.props.recipeSave({ name, phone, shift, uid: this.props.recipe.uid });
+		//Destructure props
+		const { name, ingredients, steps } = this.props;
+		//Call recipeSave action for the specified (uid) recipe
+		this.props.recipeSave({ name, ingredients, steps, uid: this.props.recipe.uid });
 	}
 	/*
 	onTextPress() {
@@ -25,12 +37,17 @@ class RecipeEdit extends Component {
 		Communications.text(phone, `Your upcoming shift is on ${shift}`);
 	}
 	*/
+	//What happens when Yes is pressed in modal
 	onAccept() {
+		//Grab recipe ID
 		const { uid } = this.props.recipe;
+		//Call delete action with specified ID
 		this.props.recipeDelete({ uid });
 	}
 
+	//When No is pressed in Modal
 	onDecline() {
+		//Show modal is set to false
 		this.setState({ showModal: false });
 	}
 
@@ -53,7 +70,7 @@ class RecipeEdit extends Component {
 			{*/}
 			<CardSection>
 			<Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
-				Fire Employee
+				Delete Recipe
 			</Button>
 			</CardSection>
 
@@ -69,9 +86,10 @@ class RecipeEdit extends Component {
 	}
 }
 
+//Passes in selected state properties as props to component
 const mapStateToProps = (state) => {
-	const { name, phone, shift } = state.recipeForm;
-	return { name, phone, shift };
+	const { name, ingredients, steps } = state.recipeForm;
+	return { name, ingredients, steps };
 };
 
 export default connect(mapStateToProps, { recipeUpdate, recipeSave, recipeDelete })(RecipeEdit);
