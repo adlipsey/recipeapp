@@ -16,9 +16,6 @@ import { recipeUpdate } from '../actions';
 
 class RecipeForm extends Component {
 
-  componentWillUpdate(){
-    console.log(this.props.notes);
-  }
   
   render() {
     console.log(this.props);
@@ -104,8 +101,9 @@ class RecipeForm extends Component {
           
           <FormLabel>Dietary Info</FormLabel>
           <CheckBox
-              title='Vegan' onPress={() => !this.props.vegan}
+              title='Vegan' 
               checked={this.props.vegan}
+              onPress={() => this.props.recipeUpdate({ prop: 'vegan', value: !this.props.vegan })}
           />
           <CheckBox
               title='Vegetarian' onPress={() => !this.props.vegetarian}
@@ -177,7 +175,7 @@ const mapStateToProps = (state) => {
       glutenfree, 
       dairyfree 
     } = state.recipeForm;
-
+console.log(vegan);
   return { 
       name, 
       ingredients, 
