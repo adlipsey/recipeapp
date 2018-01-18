@@ -9,17 +9,28 @@ class ListItem extends Component {
 	}
 
 	render() {
-		const { name } = this.props.recipe;
+		const { name, cook, prep, servings } = this.props.recipe;
 
 		return (
 			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
-			<View>
-			<CardSection>
+
+			<CardSection style={{ flexDirection: 'column', flex: 1 }}>
 			<Text style={styles.titleStyle}>
 				{name}
 			</Text>
-			</CardSection>
+			<View >
+				<Text>
+					Prep Time: {prep}
+				</Text>
+				<Text>
+					Cook Time: {cook}
+				</Text>
+				<Text>
+					Servings: {servings}
+				</Text>
 			</View>
+			</CardSection>
+
 			</TouchableWithoutFeedback>
 		);
 	}

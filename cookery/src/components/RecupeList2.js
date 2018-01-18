@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 
 export default class LotsOfStyles extends Component {
@@ -37,8 +37,3 @@ const styles = StyleSheet.create({
 
  
 });
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => LotsOfStyles);
-
-

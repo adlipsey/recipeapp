@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { recipeUpdate, recipeCreate } from '../actions';
 import { Card, CardSection, Button } from './common';
-import RecipeForm from './RecipeForm2';
+import RecipeForm from './RecipeForm';
 
 class RecipeCreate extends Component {
 
