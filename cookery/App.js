@@ -62,3 +62,75 @@ const styles = StyleSheet.create({
   },
 });
 */
+
+//Layout for Recipe List 
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  View
+} from 'react-native';
+ 
+export default class GridLayout extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+          <View style={styles.row}>
+            <View style={[styles.box, styles.box2]}></View>            
+          </View>
+           
+          <View style={styles.row}>
+            <View style={[styles.box, styles.box2]}></View>
+            
+          </View>
+ 
+          <View style={styles.row}>
+            <View style={[styles.box, styles.box]}></View>
+           
+          <View style={[styles.box, styles.box3]}></View>
+          </View>
+
+          <View style={styles.row}>
+            <View style={[styles.box, styles.box]}></View>
+           
+          <View style={[styles.box, styles.box3]}></View>
+          </View>
+
+          <View style={styles.row}>
+            <View style={[styles.box, styles.box2]}></View>
+          </View>
+
+          <View style={styles.row}>
+            <View style={[styles.box]}></View>
+          </View>
+      </View>
+    );
+  }
+}
+ 
+const styles = StyleSheet.create({
+  row: {
+    
+    flexDirection: 'row',
+    marginBottom: 10
+  },
+  box: {
+   flex: 1,
+    backgroundColor: 'aqua',
+  },
+
+  box2: {
+    height: 105,
+    backgroundColor: 'blue'
+
+  },
+  box3: {
+    height: 156,
+    backgroundColor: 'purple'
+  },
+  
+  two: {
+  
+    height:105,
+    flex: 2
+  }
+});
