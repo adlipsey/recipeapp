@@ -33,7 +33,7 @@ class RecipeList extends Component {
 		return (
 			<ListView
 				enableEmptySections
-        contentContainerStyle={{ flex: 1, flexDirection: 'row' }}
+        
 				dataSource={this.dataSource}
 				renderRow={this.renderRow}
 			/>

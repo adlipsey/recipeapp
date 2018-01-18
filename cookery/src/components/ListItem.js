@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, TouchableHighlight, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
 class ListItem extends Component {
 	onRowPress() {
-		Actions.recipeEdit({ recipe: this.props.recipe });
+		Actions.recipeView({ recipe: this.props.recipe });
 	}
 
 	render() {
 		const { name, cook, prep, servings } = this.props.recipe;
 
 		return (
-			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+			<TouchableHighlight onPress={this.onRowPress.bind(this)}>
 
-			<CardSection style={{ flexDirection: 'column', flex: 1 }}>
+			<CardSection>
 			<Text style={styles.titleStyle}>
 				{name}
 			</Text>
@@ -31,7 +31,7 @@ class ListItem extends Component {
 			</View>
 			</CardSection>
 
-			</TouchableWithoutFeedback>
+			</TouchableHighlight>
 		);
 	}
 }

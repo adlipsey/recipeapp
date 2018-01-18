@@ -5,6 +5,7 @@ import LoginForm from './components/LoginForm';
 import RecipeList from './components/RecipeList';
 import RecipeCreate from './components/RecipeCreate';
 import RecipeEdit from './components/RecipeEdit';
+import Recipe from './components/Recipe';
 
 //Create router component
 const RouterComponent = () => {
@@ -30,6 +31,7 @@ const RouterComponent = () => {
 					/>
 					{/* Create/Edit recipes - different versions of recipe form */}
 					<Scene key='recipeCreate' component={RecipeCreate} title='Create Recipe' />
+					<Scene key='recipeView'	component={Recipe} title='Recipe' />
 					<Scene key='recipeEdit' component={RecipeEdit} title='Edit Recipe' />
 				</Scene>
 			</Scene>

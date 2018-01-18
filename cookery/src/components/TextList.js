@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 
 const TextList = props => {
-  let arr = props.listItems.split(props.splitChar);
+  let arr = props.listItems.split('\n');
+  console.log(arr);
   const styleObj = {
     flex: 1,
     flexDirection: 'column'
