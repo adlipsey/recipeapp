@@ -3,8 +3,7 @@ import { ScrollView, View, StyleSheet, Alert } from 'react-native';
 import { 
   FormLabel, 
   FormInput, 
-  FormValidationMessage, 
-  Button, 
+  FormValidationMessage,  
   CheckBox 
 } from 'react-native-elements';// 0.19.0
 import { connect } from 'react-redux';
@@ -106,16 +105,19 @@ class RecipeForm extends Component {
               onPress={() => this.props.recipeUpdate({ prop: 'vegan', value: !this.props.vegan })}
           />
           <CheckBox
-              title='Vegetarian' onPress={() => !this.props.vegetarian}
+              title='Vegetarian' 
               checked={this.props.vegetarian}
+              onPress={() => this.props.recipeUpdate({ prop: 'vegetarian', value: !this.props.vegetarian })}
           />
           <CheckBox
-              title='Gluten Free' onPress={() => !this.props.glutenfree}
+              title='Gluten Free' 
               checked={this.props.glutenfree}
+              onPress={() => this.props.recipeUpdate({ prop: 'glutenfree', value: !this.props.glutenfree })}
           />
           <CheckBox
-              title='Dairy Free' onPress={() => !this.props.dairyfree}
+              title='Dairy Free' 
               checked={this.props.dairyfree}
+              onPress={() => this.props.recipeUpdate({ prop: 'dairyfree', value: !this.props.dairyfree })}
           />
           
           <FormLabel>Notes</FormLabel>
